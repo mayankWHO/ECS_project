@@ -1,4 +1,4 @@
-package com.mycompany.ecsproject
+package com.mayank.ecsproject
 
 import io.flutter.embedding.android.FlutterActivity
 

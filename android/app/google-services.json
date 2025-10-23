@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "475946606951",
+    "project_id": "ecs-p-8cb6e",
+    "storage_bucket": "ecs-p-8cb6e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475946606951:android:09652b5554bc6a47294fc2",
+        "android_client_info": {
+          "package_name": "com.mayank.ecsproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuQaSBwe2F1ZRFYyW-2t9hhm-8RQ2aul8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
