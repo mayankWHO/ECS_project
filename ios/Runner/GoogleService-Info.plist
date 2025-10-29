@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyBSLJNEeHoObgvdF4M8smcGiNmnSA1wexE</string>
+	<string>AIzaSyBmSufaXsrwEpjS2uV3n_J306siQ633yWE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>475946606951</string>
+	<string>912811824295</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.mayank.ecsproject</string>
 	<key>PROJECT_ID</key>
-	<string>ecs-p-8cb6e</string>
+	<string>e-c-s-project-d7pu2p</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ecs-p-8cb6e.firebasestorage.app</string>
+	<string>e-c-s-project-d7pu2p.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:475946606951:ios:e10c8c7f617ecb2c294fc2</string>
+	<string>1:912811824295:ios:92e3da4350f34a42e37782</string>
 </dict>
 </plist>

@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth_manager.dart';
 
+import '/backend/backend.dart';
 import 'anonymous_auth.dart';
 import 'apple_auth.dart';
 import 'email_auth.dart';
@@ -89,6 +90,7 @@ class FirebaseAuthManager extends AuthManager
         return;
       }
       await currentUser?.updateEmail(email);
+      await updateUserDocument(email: email);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'requires-recent-login') {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -301,9 +303,12 @@ class FirebaseAuthManager extends AuthManager
   ) async {
     try {
       final userCredential = await signInFunc();
+      if (userCredential?.user != null) {
+        await maybeCreateUser(userCredential!.user!);
+      }
       return userCredential == null
           ? null
-          : ECSProjectFirebaseUser.fromUserCredential(userCredential);
+          : ECSProject1FirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
       final errorMsg = switch (e.code) {
         'email-already-in-use' =>
