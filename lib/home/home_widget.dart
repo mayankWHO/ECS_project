@@ -165,6 +165,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                     return Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
+                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6.0),
                       ),
@@ -318,10 +319,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                   chipSpacing: 12.0,
                   rowSpacing: 8.0,
                   multiselect: false,
+                  initialized: _model.choiceChipsValue != null,
                   alignment: WrapAlignment.center,
                   controller: _model.choiceChipsValueController ??=
                       FormFieldController<List<String>>(
-                    [],
+                    ['Morning'],
                   ),
                   wrapped: false,
                 ),
@@ -362,6 +364,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             listViewMedicationsRecordList[listViewIndex];
                         return Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: Colors.white,
                           child: Padding(
                             padding: EdgeInsets.all(16.0),
                             child: Container(

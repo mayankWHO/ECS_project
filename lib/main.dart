@@ -139,9 +139,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
+      'Home': HomeWidget(),
       'DoseMed': DoseMedWidget(),
       'Logs': LogsWidget(),
-      'Home': HomeWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -168,6 +168,13 @@ class _NavBarPageState extends State<NavBarPage> {
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: '',
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.medkit,
               ),
@@ -177,13 +184,6 @@ class _NavBarPageState extends State<NavBarPage> {
             BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.thList,
-              ),
-              label: '',
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
               ),
               label: '',
               tooltip: '',
