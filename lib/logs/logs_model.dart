@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'presc_widget.dart' show PrescWidget;
+import 'logs_widget.dart' show LogsWidget;
 import 'package:flutter/material.dart';
 
-class PrescModel extends FlutterFlowModel<PrescWidget> {
+class LogsModel extends FlutterFlowModel<LogsWidget> {
   @override
   void initState(BuildContext context) {}
 

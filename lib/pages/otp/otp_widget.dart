@@ -215,7 +215,7 @@ class _OtpWidgetState extends State<OtpWidget> {
                         }
 
                         context.pushNamedAuth(
-                          HomePageWidget.routeName,
+                          HomeWidget.routeName,
                           context.mounted,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(

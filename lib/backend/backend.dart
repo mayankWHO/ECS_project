@@ -8,7 +8,7 @@ import 'schema/util/firestore_util.dart';
 import 'schema/users_record.dart';
 import 'schema/medications_record.dart';
 import 'schema/dispense_logs_record.dart';
-import 'schema/device_status_record.dart';
+import 'schema/dispenser_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -20,7 +20,7 @@ export 'schema/util/schema_util.dart';
 export 'schema/users_record.dart';
 export 'schema/medications_record.dart';
 export 'schema/dispense_logs_record.dart';
-export 'schema/device_status_record.dart';
+export 'schema/dispenser_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -133,38 +133,38 @@ Future<List<DispenseLogsRecord>> queryDispenseLogsRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query DeviceStatusRecords (as a Stream and as a Future).
-Future<int> queryDeviceStatusRecordCount({
+/// Functions to query DispenserRecords (as a Stream and as a Future).
+Future<int> queryDispenserRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      DeviceStatusRecord.collection,
+      DispenserRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<DeviceStatusRecord>> queryDeviceStatusRecord({
+Stream<List<DispenserRecord>> queryDispenserRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      DeviceStatusRecord.collection,
-      DeviceStatusRecord.fromSnapshot,
+      DispenserRecord.collection,
+      DispenserRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<DeviceStatusRecord>> queryDeviceStatusRecordOnce({
+Future<List<DispenserRecord>> queryDispenserRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      DeviceStatusRecord.collection,
-      DeviceStatusRecord.fromSnapshot,
+      DispenserRecord.collection,
+      DispenserRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
