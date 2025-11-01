@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -26,11 +25,6 @@ class MedicationsRecord extends FirestoreRecord {
   String get userID => _userID ?? '';
   bool hasUserID() => _userID != null;
 
-  // "medicines" field.
-  List<String>? _medicines;
-  List<String> get medicines => _medicines ?? const [];
-  bool hasMedicines() => _medicines != null;
-
   // "hour" field.
   int? _hour;
   int get hour => _hour ?? 0;
@@ -46,13 +40,36 @@ class MedicationsRecord extends FirestoreRecord {
   String get session => _session ?? '';
   bool hasSession() => _session != null;
 
+  // "doseName" field.
+  String? _doseName;
+  String get doseName => _doseName ?? '';
+  bool hasDoseName() => _doseName != null;
+
+  // "notes" field.
+  String? _notes;
+  String get notes => _notes ?? '';
+  bool hasNotes() => _notes != null;
+
+  // "status" field.
+  String? _status;
+  String get status => _status ?? '';
+  bool hasStatus() => _status != null;
+
+  // "compartment" field.
+  int? _compartment;
+  int get compartment => _compartment ?? 0;
+  bool hasCompartment() => _compartment != null;
+
   void _initializeFields() {
     _createdAt = snapshotData['createdAt'] as DateTime?;
     _userID = snapshotData['userID'] as String?;
-    _medicines = getDataList(snapshotData['medicines']);
     _hour = castToType<int>(snapshotData['hour']);
     _minute = castToType<int>(snapshotData['minute']);
     _session = snapshotData['session'] as String?;
+    _doseName = snapshotData['doseName'] as String?;
+    _notes = snapshotData['notes'] as String?;
+    _status = snapshotData['status'] as String?;
+    _compartment = castToType<int>(snapshotData['compartment']);
   }
 
   static CollectionReference get collection =>
@@ -95,6 +112,10 @@ Map<String, dynamic> createMedicationsRecordData({
   int? hour,
   int? minute,
   String? session,
+  String? doseName,
+  String? notes,
+  String? status,
+  int? compartment,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -103,6 +124,10 @@ Map<String, dynamic> createMedicationsRecordData({
       'hour': hour,
       'minute': minute,
       'session': session,
+      'doseName': doseName,
+      'notes': notes,
+      'status': status,
+      'compartment': compartment,
     }.withoutNulls,
   );
 
@@ -114,18 +139,29 @@ class MedicationsRecordDocumentEquality implements Equality<MedicationsRecord> {
 
   @override
   bool equals(MedicationsRecord? e1, MedicationsRecord? e2) {
-    const listEquality = ListEquality();
     return e1?.createdAt == e2?.createdAt &&
         e1?.userID == e2?.userID &&
-        listEquality.equals(e1?.medicines, e2?.medicines) &&
         e1?.hour == e2?.hour &&
         e1?.minute == e2?.minute &&
-        e1?.session == e2?.session;
+        e1?.session == e2?.session &&
+        e1?.doseName == e2?.doseName &&
+        e1?.notes == e2?.notes &&
+        e1?.status == e2?.status &&
+        e1?.compartment == e2?.compartment;
   }
 
   @override
-  int hash(MedicationsRecord? e) => const ListEquality().hash(
-      [e?.createdAt, e?.userID, e?.medicines, e?.hour, e?.minute, e?.session]);
+  int hash(MedicationsRecord? e) => const ListEquality().hash([
+        e?.createdAt,
+        e?.userID,
+        e?.hour,
+        e?.minute,
+        e?.session,
+        e?.doseName,
+        e?.notes,
+        e?.status,
+        e?.compartment
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is MedicationsRecord;

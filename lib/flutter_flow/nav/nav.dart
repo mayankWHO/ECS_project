@@ -101,31 +101,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => OtpWidget(),
         ),
         FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
+          name: DoseMedWidget.routeName,
+          path: DoseMedWidget.routePath,
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'HomePage')
-              : HomePageWidget(),
+              ? NavBarPage(initialPage: 'DoseMed')
+              : DoseMedWidget(),
         ),
         FFRoute(
-          name: MedLogsWidget.routeName,
-          path: MedLogsWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'MedLogs')
-              : MedLogsWidget(),
-        ),
-        FFRoute(
-          name: PrescWidget.routeName,
-          path: PrescWidget.routePath,
+          name: LogsWidget.routeName,
+          path: LogsWidget.routePath,
           builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'Presc') : PrescWidget(),
+              params.isEmpty ? NavBarPage(initialPage: 'Logs') : LogsWidget(),
         ),
         FFRoute(
-          name: TestNewWidget.routeName,
-          path: TestNewWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'testNew')
-              : TestNewWidget(),
+          name: RefPageWidget.routeName,
+          path: RefPageWidget.routePath,
+          builder: (context, params) => RefPageWidget(),
+        ),
+        FFRoute(
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
