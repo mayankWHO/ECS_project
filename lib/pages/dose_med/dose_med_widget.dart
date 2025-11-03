@@ -82,7 +82,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
             },
           ),
           title: Text(
-            'Add Dosage',
+            'Add Daily Dosage',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.interTight(
                     fontWeight: FontWeight.w600,
@@ -614,7 +614,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                       .asValidator(context),
                                   inputFormatters: [
                                     FilteringTextInputFormatter.allow(
-                                        RegExp('^(?:[01]?\\d|2[0-3])\$'))
+                                        RegExp('^(?:[0-5]?\\d)\$'))
                                   ],
                                 ),
                               ].divide(SizedBox(height: 8.0)),
@@ -653,27 +653,25 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: 'e.g. 1, 2',
-                          hintStyle: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                font: GoogleFonts.inter(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
+                          hintStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: Color(0xFF57636C),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).alternate,
@@ -715,6 +713,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
+                              color: Colors.black,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -723,9 +722,14 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                   .bodyMedium
                                   .fontStyle,
                             ),
+                        keyboardType: TextInputType.number,
                         cursorColor: FlutterFlowTheme.of(context).primary,
                         validator: _model.textController4Validator
                             .asValidator(context),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(
+                              RegExp('^(?:0?[1-9]|1[0-2])\$'))
+                        ],
                       ),
                     ].divide(SizedBox(height: 8.0)),
                   ),
@@ -820,6 +824,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
+                              color: Colors.black,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodyMedium
