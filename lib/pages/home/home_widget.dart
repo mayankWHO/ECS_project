@@ -182,7 +182,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Device Status: ${cardDispenserRecord?.status}',
+                                    valueOrDefault<String>(
+                                      'Device Status: ${cardDispenserRecord?.status}',
+                                      'Offline',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
@@ -264,7 +267,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   options: [
                     ChipData('Morning'),
                     ChipData('Afternoon'),
-                    ChipData('Night')
+                    ChipData('Evening')
                   ],
                   onChanged: (val) => safeSetState(
                       () => _model.choiceChipsValue = val?.firstOrNull),
