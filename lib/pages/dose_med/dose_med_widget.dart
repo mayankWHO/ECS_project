@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dose_med_model.dart';
 export 'dose_med_model.dart';
@@ -64,16 +65,16 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF1F4F8),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: Color(0xFFF1F4F8),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderRadius: 20.0,
             buttonSize: 40.0,
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              color: Colors.black,
               size: 24.0,
             ),
             onPressed: () {
@@ -88,6 +89,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                     fontStyle:
                         FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                   ),
+                  color: Colors.black,
                   fontSize: 20.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
@@ -122,6 +124,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                         .titleMedium
                                         .fontStyle,
                                   ),
+                                  color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)
@@ -187,8 +190,6 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           filled: true,
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                         ),
@@ -201,6 +202,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
+                              color: Colors.black,
                               letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -229,6 +231,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                         .titleMedium
                                         .fontStyle,
                                   ),
+                                  color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)
@@ -270,30 +273,28 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                         unselectedChipStyle: ChipStyle(
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                font: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                          iconColor: Color(0x00000000),
+                          backgroundColor: Color(0xFFF1F4F8),
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: Colors.black,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                          iconColor: Colors.black,
                           iconSize: 0.0,
                           labelPadding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 12.0, 20.0, 12.0),
                           elevation: 0.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderColor: Colors.black,
                           borderWidth: 1.0,
                           borderRadius: BorderRadius.circular(25.0),
                         ),
@@ -324,6 +325,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                         .titleMedium
                                         .fontStyle,
                                   ),
+                                  color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)
@@ -351,8 +353,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Colors.black,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
@@ -366,7 +367,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                   textInputAction: TextInputAction.next,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    hintText: '08',
+                                    hintText: 'Enter in 24hr format',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -387,6 +388,26 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    errorStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -425,8 +446,6 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     filled: true,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
                                     contentPadding:
                                         EdgeInsetsDirectional.fromSTEB(
                                             16.0, 20.0, 16.0, 20.0),
@@ -441,6 +460,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
+                                        color: Colors.black,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -449,11 +469,21 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                             .fontStyle,
                                       ),
                                   textAlign: TextAlign.center,
+                                  maxLength: 2,
+                                  buildCounter: (context,
+                                          {required currentLength,
+                                          required isFocused,
+                                          maxLength}) =>
+                                      null,
                                   keyboardType: TextInputType.number,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
                                   validator: _model.textController2Validator
                                       .asValidator(context),
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(RegExp(
+                                        '^\\s*(?:[01]?\\d|2[0-3])\\s*\$'))
+                                  ],
                                 ),
                               ].divide(SizedBox(height: 8.0)),
                             ),
@@ -475,8 +505,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: Colors.black,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
@@ -549,8 +578,6 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     filled: true,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
                                     contentPadding:
                                         EdgeInsetsDirectional.fromSTEB(
                                             16.0, 20.0, 16.0, 20.0),
@@ -565,6 +592,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
+                                        color: Colors.black,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -573,11 +601,21 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                             .fontStyle,
                                       ),
                                   textAlign: TextAlign.center,
+                                  maxLength: 2,
+                                  buildCounter: (context,
+                                          {required currentLength,
+                                          required isFocused,
+                                          maxLength}) =>
+                                      null,
                                   keyboardType: TextInputType.number,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
                                   validator: _model.textController3Validator
                                       .asValidator(context),
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(
+                                        RegExp('^(?:[01]?\\d|2[0-3])\$'))
+                                  ],
                                 ),
                               ].divide(SizedBox(height: 8.0)),
                             ),
@@ -600,6 +638,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                         .titleMedium
                                         .fontStyle,
                                   ),
+                                  color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)
@@ -664,8 +703,6 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           filled: true,
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                         ),
@@ -706,6 +743,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                         .titleMedium
                                         .fontStyle,
                                   ),
+                                  color: Colors.black,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)
@@ -770,8 +808,6 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           filled: true,
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 16.0),
                         ),
