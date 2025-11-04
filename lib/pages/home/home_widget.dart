@@ -108,7 +108,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           title: Text(
-            'Medi- Up',
+            'Dashboard',
             style: FlutterFlowTheme.of(context).headlineLarge.override(
                   font: GoogleFonts.interTight(
                     fontWeight: FontWeight.w600,
@@ -116,6 +116,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         FlutterFlowTheme.of(context).headlineLarge.fontStyle,
                   ),
                   color: Color(0xFF1A1A1A),
+                  fontSize: 24.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
                   fontStyle:

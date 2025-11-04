@@ -58,6 +58,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                         FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                   ),
                   color: Colors.black,
+                  fontSize: 24.0,
                   letterSpacing: 0.0,
                   fontWeight:
                       FlutterFlowTheme.of(context).headlineSmall.fontWeight,

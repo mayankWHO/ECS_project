@@ -120,6 +120,7 @@ final parametersBuilderMap =
   'DoseMed': ParameterData.none(),
   'Logs': ParameterData.none(),
   'Home': ParameterData.none(),
+  'prediction': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {
