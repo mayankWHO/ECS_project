@@ -120,6 +120,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: HomeWidget.routePath,
           builder: (context, params) =>
               params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
+        ),
+        FFRoute(
+          name: PredictionWidget.routeName,
+          path: PredictionWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'prediction')
+              : PredictionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

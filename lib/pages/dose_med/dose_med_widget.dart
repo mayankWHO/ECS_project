@@ -81,21 +81,24 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
               print('IconButton pressed ...');
             },
           ),
-          title: Text(
-            'Add Daily Dosage',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.interTight(
+          title: Align(
+            alignment: AlignmentDirectional(-1.0, 0.0),
+            child: Text(
+              'Add Daily Dosage',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    font: GoogleFonts.interTight(
+                      fontWeight: FontWeight.w600,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                    ),
+                    color: Colors.black,
+                    fontSize: 20.0,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                     fontStyle:
                         FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                   ),
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.w600,
-                  fontStyle:
-                      FlutterFlowTheme.of(context).headlineMedium.fontStyle,
-                ),
+            ),
           ),
           actions: [],
           centerTitle: true,
@@ -248,7 +251,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                         onChanged: (val) => safeSetState(
                             () => _model.choiceChipsValue = val?.firstOrNull),
                         selectedChipStyle: ChipStyle(
-                          backgroundColor: FlutterFlowTheme.of(context).primary,
+                          backgroundColor: Colors.blue,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     font: GoogleFonts.inter(
@@ -846,10 +849,10 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent1,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: Colors.blue,
                           width: 1.0,
                         ),
                       ),
@@ -860,7 +863,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                           children: [
                             Icon(
                               Icons.info_outline,
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Colors.blue,
                               size: 20.0,
                             ),
                             Expanded(
@@ -880,8 +883,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                                     .bodySmall
                                                     .fontStyle,
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Colors.blue,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -905,8 +907,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                                                     .bodySmall
                                                     .fontStyle,
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                          color: Colors.black,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -984,7 +985,7 @@ class _DoseMedWidgetState extends State<DoseMedWidget> {
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconColor: FlutterFlowTheme.of(context).primaryBackground,
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Colors.blue,
                       textStyle: FlutterFlowTheme.of(context)
                           .titleMedium
                           .override(

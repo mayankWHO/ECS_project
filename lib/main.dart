@@ -144,6 +144,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Home': HomeWidget(),
       'DoseMed': DoseMedWidget(),
       'Logs': LogsWidget(),
+      'prediction': PredictionWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -162,7 +163,7 @@ class _NavBarPageState extends State<NavBarPage> {
             _currentPage = null;
             _currentPageName = tabs.keys.toList()[i];
           }),
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: Colors.white,
           selectedItemColor: FlutterFlowTheme.of(context).primary,
           unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
           showSelectedLabels: false,
@@ -186,6 +187,13 @@ class _NavBarPageState extends State<NavBarPage> {
             BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.thList,
+              ),
+              label: '',
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.lightbulb_sharp,
               ),
               label: '',
               tooltip: '',

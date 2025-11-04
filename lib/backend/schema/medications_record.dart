@@ -60,6 +60,11 @@ class MedicationsRecord extends FirestoreRecord {
   int get compartment => _compartment ?? 0;
   bool hasCompartment() => _compartment != null;
 
+  // "timeTakenMinutes" field.
+  int? _timeTakenMinutes;
+  int get timeTakenMinutes => _timeTakenMinutes ?? 0;
+  bool hasTimeTakenMinutes() => _timeTakenMinutes != null;
+
   void _initializeFields() {
     _createdAt = snapshotData['createdAt'] as DateTime?;
     _userID = snapshotData['userID'] as String?;
@@ -70,6 +75,7 @@ class MedicationsRecord extends FirestoreRecord {
     _notes = snapshotData['notes'] as String?;
     _status = snapshotData['status'] as String?;
     _compartment = castToType<int>(snapshotData['compartment']);
+    _timeTakenMinutes = castToType<int>(snapshotData['timeTakenMinutes']);
   }
 
   static CollectionReference get collection =>
@@ -116,6 +122,7 @@ Map<String, dynamic> createMedicationsRecordData({
   String? notes,
   String? status,
   int? compartment,
+  int? timeTakenMinutes,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -128,6 +135,7 @@ Map<String, dynamic> createMedicationsRecordData({
       'notes': notes,
       'status': status,
       'compartment': compartment,
+      'timeTakenMinutes': timeTakenMinutes,
     }.withoutNulls,
   );
 
@@ -147,7 +155,8 @@ class MedicationsRecordDocumentEquality implements Equality<MedicationsRecord> {
         e1?.doseName == e2?.doseName &&
         e1?.notes == e2?.notes &&
         e1?.status == e2?.status &&
-        e1?.compartment == e2?.compartment;
+        e1?.compartment == e2?.compartment &&
+        e1?.timeTakenMinutes == e2?.timeTakenMinutes;
   }
 
   @override
@@ -160,7 +169,8 @@ class MedicationsRecordDocumentEquality implements Equality<MedicationsRecord> {
         e?.doseName,
         e?.notes,
         e?.status,
-        e?.compartment
+        e?.compartment,
+        e?.timeTakenMinutes
       ]);
 
   @override

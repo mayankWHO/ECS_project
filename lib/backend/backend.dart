@@ -7,8 +7,8 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
 import 'schema/medications_record.dart';
-import 'schema/dispense_logs_record.dart';
 import 'schema/dispenser_record.dart';
+import 'schema/predicted_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -19,8 +19,8 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
 export 'schema/medications_record.dart';
-export 'schema/dispense_logs_record.dart';
 export 'schema/dispenser_record.dart';
+export 'schema/predicted_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -96,43 +96,6 @@ Future<List<MedicationsRecord>> queryMedicationsRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query DispenseLogsRecords (as a Stream and as a Future).
-Future<int> queryDispenseLogsRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      DispenseLogsRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<DispenseLogsRecord>> queryDispenseLogsRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      DispenseLogsRecord.collection,
-      DispenseLogsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<DispenseLogsRecord>> queryDispenseLogsRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      DispenseLogsRecord.collection,
-      DispenseLogsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query DispenserRecords (as a Stream and as a Future).
 Future<int> queryDispenserRecordCount({
   Query Function(Query)? queryBuilder,
@@ -165,6 +128,43 @@ Future<List<DispenserRecord>> queryDispenserRecordOnce({
     queryCollectionOnce(
       DispenserRecord.collection,
       DispenserRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query PredictedRecords (as a Stream and as a Future).
+Future<int> queryPredictedRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      PredictedRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<PredictedRecord>> queryPredictedRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      PredictedRecord.collection,
+      PredictedRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<PredictedRecord>> queryPredictedRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      PredictedRecord.collection,
+      PredictedRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
